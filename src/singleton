@@ -1,0 +1,15 @@
+public class singleton{//这里私有变量uniqueinstance被延迟实例化，如果不被使用是不会实例化的。
+    //这种不是线程安全的 多线程的情况下会出现多次实例化
+    private static singleton uniqueInstance;
+    private singleton(){
+
+    }
+    public static singleton getUniqueInstance(){
+        if(uniqueInstance==null){
+            uniqueInstance=new singleton();
+        }
+        return uniqueInstance;
+    }
+
+
+}
